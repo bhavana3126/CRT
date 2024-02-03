@@ -1,0 +1,362 @@
+//create and print graph using adjacency matrix representation:
+
+//Undirected and Unweighted graph:
+
+def addnode(v):
+    global n
+    if v in nodes:
+        print(v,"is already existed")
+    else:
+        nodes.append(v)
+        n=n+1
+    for x in graph:
+        x.append(0)
+    temp=[]
+    for i in range(n):
+        temp.append(0)
+        graph.append(temp)
+def show():
+    for i in range(n):
+        for j in range(n):
+            print(graph[i][j],end="")
+        print()
+def addedge(node1,node2):
+    if node1 not in nodes:
+        print(node1,"is not present in graph")
+    elif node2 not in nodes:
+        print(node2,"is not present in graph")
+    else:
+        i=nodes.index(node1)
+        j=nodes.index(node2)
+        graph[i][j]=1
+        graph[j][i]=1
+nodes=[]
+graph=[]
+n=0
+while True:
+    print()
+    print("1.Add Node\n2.Add edge\n3.Print graph\n4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node:")
+        addnode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        addedge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+
+//directed and unweighted graph:
+
+def addNode(v):
+    global n
+    if v in nodes:
+        print(v,"node already existed")
+    else:
+        nodes.append(v)
+        n=n+1 
+    for x in graph:
+        x.append(0)
+    temp=[]
+    for i in range(n):
+        temp.append(0)
+    graph.append(temp)
+def addEdge(node1,node2):
+    if node1 not in nodes:
+        print(node1,"is not available")
+    elif node2 not in nodes:
+        print(node2,"is not available" )
+    else:
+        i=nodes.index(node1)
+        j=nodes.index(node2)
+        graph[i][j]=1
+def show():
+    for i in range(n):
+        for j in range(n):
+            print(graph[i][j],end=" ")
+        print()
+nodes=[]
+graph=[]
+n=0
+while True:
+    print()
+    print("1.addNode\n 2.addEdge\n 3.show\n 4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node:")
+        addNode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        addEdge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+
+//undirected and weighted
+
+def addnode(v):
+    global n
+    if v in nodes:
+        print(v,"is already existed")
+    else:
+        nodes.append(v)
+        n=n+1
+    for x in graph:
+        x.append(0)
+    temp=[]
+    for i in range(n):
+        temp.append(0)
+        graph.append(temp)
+def show():
+    for i in range(n):
+        for j in range(n):
+            print(graph[i][j],end="")
+        print()
+def addedge(node1,node2):
+    if node1 not in nodes:
+        print(node1,"is not present in graph")
+    elif node2 not in nodes:
+        print(node2,"is not present in graph")
+    else:
+        i=nodes.index(node1)
+        j=nodes.index(node2)
+        graph[i][j]=wt
+        graph[j][i]=wt
+nodes=[]
+graph=[]
+n=0
+while True:
+    print()
+    print("1.Add Node\n2.Add edge\n3.Print graph\n4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node:")
+        addnode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        wt=input("enter weight")
+        addedge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+
+//directed and weighted 
+
+def addnode(v):
+    global n
+    if v in nodes:
+        print(v,"is already existed")
+    else:
+        nodes.append(v)
+        n=n+1
+    for x in graph:
+        x.append(0)
+    temp=[]
+    for i in range(n):
+        temp.append(0)
+        graph.append(temp)
+def show():
+    for i in range(n):
+        for j in range(n):
+            print(graph[i][j],end="")
+        print()
+def addedge(node1,node2):
+    if node1 not in nodes:
+        print(node1,"is not present in graph")
+    elif node2 not in nodes:
+        print(node2,"is not present in graph")
+    else:
+        i=nodes.index(node1)
+        j=nodes.index(node2)
+        graph[i][j]=wt
+nodes=[]
+graph=[]
+n=0
+while True:
+    print()
+    print("1.Add Node\n2.Add edge\n3.Print graph\n4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node:")
+        addnode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        wt=input("enter weight")
+        addedge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+
+//undirected and unweighted using adjacency list
+
+def addnode(v):
+    global n
+    if v in graph:
+        print(v,"node already existed")
+    else:
+        graph[v]=[]
+def addEdge(node1,node2):
+    if node1 not in graph:
+        print(node1,"is not available")
+    elif node2 not in graph:
+        print(node2,"is not available" )
+    else:
+        graph[node1].append(node2)
+        graph[node2].append(node1)
+def show():
+    for x in graph:
+        print(x,":",graph[x])
+graph={}
+while True:
+    print()
+    print("1.addNode\n 2.addEdge\n 3.show\n 4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node:")
+        addnode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        addEdge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+
+// directed and unweighted using adjacency list
+
+def addnode(v):
+    global n
+    if v in graph:
+        print(v,"node already existed")
+    else:
+        graph[v]=[]
+def addEdge(node1,node2):
+    if node1 not in graph:
+        print(node1,"is not available")
+    elif node2 not in graph:
+        print(node2,"is not available" )
+    else:
+        graph[node1].append(node2)
+def show():
+    for x in graph:
+        print(x,":",graph[x])
+graph={}
+while True:
+    print()
+    print("1.addNode\n 2.addEdge\n 3.show\n 4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node:")
+        addnode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        addEdge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+
+//undirected and weighted using adjacency list
+
+def addnode(v):
+    global n
+    if v in graph:
+        print(v,"node already existed")
+    else:
+        graph[v]=[]
+def addEdge(node1,node2):
+    if node1 not in graph:
+        print(node1,"is not available")
+    elif node2 not in graph:
+        print(node2,"is not available" )
+    else:
+        t=(node2,wt)
+        graph[node1].append(t)
+        graph[node2].append(node1)
+def show():
+    for x in graph:
+        print(x,":",graph[x])
+graph={}
+while True:
+    print()
+    print("1.addNode\n 2.addEdge\n 3.show\n 4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node:")
+        addnode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        wt=input("enter the weight")
+        addEdge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+
+
+//directed and weighted using adjacency list
+
+def addnode(v):
+    global n
+    if v in graph:
+        print(v,"node already existed")
+    else:
+        graph[v]=[]
+def addEdge(node1,node2):
+    if node1 not in graph:
+        print(node1,"is not available")
+    elif node2 not in graph:
+        print(node2,"is not available" )
+    else:
+        t=(node2,wt)
+        graph[node1].append(t)
+def show():
+    for x in graph:
+        print(x,":",graph[x])
+graph={}
+while True:
+    print()
+    print("1.addNode\n 2.addEdge\n 3.show\n 4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node:")
+        addnode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        wt=input("enter the weight")
+        addEdge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+
+
